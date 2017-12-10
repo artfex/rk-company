@@ -61,7 +61,7 @@ class Load {
                     case 'металл yt':
                         $yt_metal = $i;
                         break;
-                    case 'акция турция пластик':
+                    case 'акция yt металл':
                         $action = $i;
                         break;
                     case 'стяжки (хомуты)':
@@ -70,7 +70,7 @@ class Load {
                     case 'разъемы':
                         $line_connectors = $i;
                         break;
-                    case 'автохимия':
+                    case 'инструменты':
                         $line_chemistry = $i;
                         break;
                 }
