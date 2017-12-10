@@ -1,0 +1,668 @@
+@font-face
+  font-family: "AvenirNextW1G-Regular"
+  src: url("../fonts/AvenirNextW1G-Regular/AvenirNextW1G-Regular.eot")
+  src: url("../fonts/AvenirNextW1G-Regular/AvenirNextW1G-Regular.eot?#iefix")format("embedded-opentype"), url("../fonts/AvenirNextW1G-Regular/AvenirNextW1G-Regular.woff") format("woff"), url("../fonts/AvenirNextW1G-Regular/AvenirNextW1G-Regular.ttf") format("truetype")
+  font-style: normal
+  font-weight: normal
+
+@font-face
+  font-family: "AvenirNextW1G-Demi"
+  src: url("../fonts/AvenirNextW1G-Demi/AvenirNextW1G-Demi.eot")
+  src: url("../fonts/AvenirNextW1G-Demi/AvenirNextW1G-Demi.eot?#iefix")format("embedded-opentype"), url("../fonts/AvenirNextW1G-Demi/AvenirNextW1G-Demi.woff") format("woff"), url("../fonts/AvenirNextW1G-Demi/AvenirNextW1G-Demi.ttf") format("truetype")
+  font-style: normal
+  font-weight: normal
+
+@font-face
+  font-family: "AvenirNextW1G-Medium"
+  src: url("../fonts/AvenirNextW1G-Medium/AvenirNextW1G-Medium.eot")
+  src: url("../fonts/AvenirNextW1G-Medium/AvenirNextW1G-Medium.eot?#iefix")format("embedded-opentype"), url("../fonts/AvenirNextW1G-Medium/AvenirNextW1G-Medium.woff") format("woff"), url("../fonts/AvenirNextW1G-Medium/AvenirNextW1G-Medium.ttf") format("truetype")
+  font-style: normal
+  font-weight: normal
+
+@mixin respond-to($media)
+  @if $media == large-desctop
+    @media only screen and (max-width: 1220px)
+      @content
+  @if $media == middle-desctop
+    @media only screen and (max-width: 991px)
+      @content
+  @if $media == small-desctop
+    @media only screen and (max-width: 767px)
+      @content
+  @if $media == small-tablet
+    @media only screen and (max-width: 570px)
+      @content
+  @if $media == mobile
+    @media only screen and (max-width: 479px)
+      @content
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+%transition
+  -webkit-transition: all .3s
+  -moz-transition: all .3s
+  -ms-transition: all .3s
+  -o-transition: all .3s
+  transition: all .3s
+.for_a
+  text-align: center
+body
+  font-size: 16px
+  font-family: "AvenirNextW1G-Regular"
+  color: #000
+  @include respond-to(middle-desctop)
+    font-size: 14px
+  @include respond-to(small-desctop)
+    font-size: 12px
+%all_block
+  width: 100%
+  max-width: 1920px
+  margin: 0 auto
+a
+  text-decoration: none
+%after
+  content: ""
+  position: absolute
+div:focus,
+a:focus,
+span:focus,
+button:focus,
+input:focus,
+textarea:focus
+  outline: none !important
+li
+  list-style: none
+form
+  margin: 25px -39px 0 -39px
+  padding-bottom: 10px
+  @include respond-to(middle-desctop)
+    margin: 25px -25px 0 -25px
+  @include respond-to(small-desctop)
+    margin: 15px -10px 0 -10px
+  div
+    display: inline-block
+    vertical-align: bottom
+    width: 49.9%
+    position: relative
+    padding: 20px 39px
+    margin: 0 0 0 -.25em
+    @include respond-to(middle-desctop)
+      padding: 12px 25px
+    @include respond-to(small-desctop)
+      padding: 8px 10px
+    &:nth-child(2n+1)
+      margin-left: 0
+    &.one-div
+      width: 100%
+      display: block
+    .dont_know_password.pop-up_a
+      position: absolute
+      top: 22px
+      font-size: 14px
+      color: #8c8c8c
+      text-decoration: none
+      right: 39px
+      @include respond-to(middle-desctop)
+        right: 25px
+        top: 15px
+      @include respond-to(small-desctop)
+        top: 8px
+        right: 10px
+        font-size: 12px
+    label
+      display: block
+      font-size: 18px
+      color: #60696b
+      font-family: "AvenirNextW1G-Medium"
+      margin-bottom: 8px
+      @include respond-to(middle-desctop)
+        font-size: 16px
+      @include respond-to(small-desctop)
+        font-size: 14px
+        margin-bottom: 5px
+      @include respond-to(small-tablet)
+        font-size: 12px
+      &.error
+        color: #ff1515
+        position: absolute
+        bottom: -8px
+        left: 39px
+        margin: 0
+        line-height: 1
+        font-size: 16px
+        @include respond-to(middle-desctop)
+          font-size: 14px
+          left: 25px
+        @include respond-to(small-desctop)
+          font-size: 12px
+          left: 10px
+      span
+        color: #f65454
+    input
+      display: block
+      width: 100%
+      font-size: 24px
+      font-family: "AvenirNextW1G-Medium"
+      background-color: #ffffff
+      padding: 13px 20px
+      border: 2px solid transparent
+      @include respond-to(middle-desctop)
+        font-size: 20px
+      @include respond-to(small-desctop)
+        font-size: 16px
+        padding: 10px 15px
+      @include respond-to(small-tablet)
+        font-size: 14px
+      &.error
+        border-color: #ff1515
+      &[type="submit"]
+        width: auto
+        max-width: 100%
+        text-align: center
+        color: #7dd2e7
+        font-family: "AvenirNextW1G-Demi"
+        min-width: 280px
+        padding: 11px 22px 15px 22px
+        -webkit-border-radius: 30px
+        -moz-border-radius: 30px
+        border-radius: 30px
+        background-color: #787878
+        border: 2px solid #787878
+        -webkit-box-shadow: 0 0 25px rgba(120, 120, 120, .45)
+        -moz-box-shadow: 0 0 25px rgba(120, 120, 120, .45)
+        box-shadow: 0 0 25px rgba(120, 120, 120, .45)
+        margin-top: 15px
+        @extend %transition
+        @include respond-to(small-desctop)
+          min-width: 20px
+          width: 100%
+          padding: 7px 15px 12px 15px
+        @include respond-to(small-tablet)
+          margin-top: 10px
+        &:hover
+          background-color: transparent
+          color: #787878
+.top_title
+  font-size: 36px
+  text-align: left
+  margin-bottom: 75px
+  position: relative
+  font-family: "AvenirNextW1G-Medium"
+  @include respond-to(middle-desctop)
+    font-size: 30px
+    margin-bottom: 55px
+  @include respond-to(small-desctop)
+    font-size: 27px
+    margin-bottom: 40px
+  @include respond-to(small-tablet)
+    font-size: 25px
+    margin-bottom: 30px
+  @include respond-to(mobile)
+    font-size: 20px
+  &:after
+    @extend %after
+    width: 130px
+    height: 4px
+    background-color: #77c7e0
+    left: 0
+    bottom: -13px
+    @include respond-to(small-desctop)
+      width: 100px
+    @include respond-to(small-tablet)
+      width: 80px
+      bottom: -6px
+.tar
+  text-align: right
+.menu_block
+  margin-bottom: 35px
+  a
+    display: inline-block
+    text-align: center
+    vertical-align: top
+    margin-right: 30px
+    color: #ffffff
+    font-family: "AvenirNextW1G-Demi"
+    min-width: 150px
+    padding: 10px 22px
+    border: 1px solid #fff
+    -webkit-border-radius: 30px
+    -moz-border-radius: 30px
+    border-radius: 30px
+    background-color: transparent
+    @extend %transition
+    @include respond-to(mobile)
+      min-width: 120px
+    &:hover
+      background-color: #ffffff
+      -webkit-box-shadow: 0 0 25px rgba(255, 255, 255, .55)
+      -moz-box-shadow: 0 0 25px rgba(255, 255, 255, .55)
+      box-shadow: 0 0 25px rgba(255, 255, 255, .55)
+      color: #787878
+    &:last-of-type
+      margin-right: 0
+    &.sign-in
+      background-color: #787878
+      border-color: #787878
+      -webkit-box-shadow: 0 0 25px rgba(120, 120, 120, .45)
+      -moz-box-shadow: 0 0 25px rgba(120, 120, 120, .45)
+      box-shadow: 0 0 25px rgba(120, 120, 120, .45)
+      color: #7dd2e7
+      &:hover
+        background-color: transparent
+        color: #787878
+        -webkit-box-shadow: none
+        -moz-box-shadow: none
+        box-shadow: none
+
+.header
+  @extend %all_block
+  background: url("../img/header_bg.jpg") no-repeat center
+  -webkit-background-size: cover
+  background-size: cover
+  color: #ffffff
+  padding-top: 5px
+  .top_header
+    margin-bottom: 75px
+    @include respond-to(mobile)
+      margin-bottom: 50px
+    .top_menu
+      margin-top: 18px
+      li
+        display: inline-block
+        vertical-align: top
+        margin-right: 40px
+        @include respond-to(small-desctop)
+          font-size: 15px
+          margin-right: 20px
+        &:last-of-type
+          margin-right: 0
+        a
+          color: #ffffff
+          display: block
+          position: relative
+          overflow: hidden
+          -webkit-transform: perspective(1px) translateZ(0)
+          transform: perspective(1px) translateZ(0)
+          padding-bottom: 3px
+          @extend %transition
+          &:before
+            @extend %transition
+            @extend %after
+            z-index: -1
+            left: 0
+            right: 100%
+            bottom: 0
+            background: #fff
+            height: 2px
+            -webkit-transition-property: right
+            transition-property: right
+            -webkit-transition-timing-function: ease-out
+            transition-timing-function: ease-out
+          &:hover
+            &:before
+              right: 0
+  .content_block
+    text-align: center
+    .description
+      font-size: 18px
+      color: #c3dff2
+      margin-bottom: 20px
+      @include respond-to(middle-desctop)
+        font-size: 15px
+      @include respond-to(small-desctop)
+        font-size: 13px
+        margin-bottom: 15px
+    .title
+      font-size: 55px
+      line-height: 60px
+      font-family: "AvenirNextW1G-Medium"
+      white-space: pre-line
+      margin-bottom: 45px
+      @include respond-to(middle-desctop)
+        font-size: 40px
+        line-height: normal
+        margin-bottom: 30px
+      @include respond-to(small-desctop)
+        font-size: 30px
+        margin-bottom: 25px
+      @include respond-to(small-tablet)
+        font-size: 24px
+      @include respond-to(mobile)
+        white-space: normal
+        font-size: 17px
+    .widow-image
+      display: block
+      margin: 0 auto
+      max-width: 100%
+.good_news
+  @extend %all_block
+  padding: 70px 0 60px 0
+  @include respond-to(small-desctop)
+    padding: 50px 0 40px 0
+  @include respond-to(mobile)
+    padding: 30px 0 20px 0
+  .good_news-container
+    margin: 0 -13px
+    text-align: center
+    @include respond-to(mobile)
+      margin: 0
+    .col
+      display: inline-block
+      vertical-align: top
+      text-align: left
+      width: 33.3%
+      padding: 0 13px
+      margin: 0 0 0 -.25em
+      @include respond-to(middle-desctop)
+        width: 49.9%
+        &:nth-child(2n+1)
+          margin-left: 0
+      @include respond-to(mobile)
+        width: 100%
+        display: block
+        padding: 0
+        margin: 0
+      &:nth-child(3n+1)
+        margin-left: 0
+        @include respond-to(middle-desctop)
+          margin-left: -.25em
+        @include respond-to(mobile)
+          margin-left: 0
+      &:last-of-type
+        .good_news-item
+          -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, .09)
+          -moz-box-shadow: 0 0 15px rgba(0, 0, 0, .09)
+          box-shadow: 0 0 15px rgba(0, 0, 0, .09)
+    .good_news-item
+      padding: 35px 28px 30px 28px
+      -webkit-border-radius: 7px
+      -moz-border-radius: 7px
+      border-radius: 7px
+      margin: 25px 0
+      @include respond-to(large-desctop)
+        padding: 20px 14px
+        margin: 20px 0
+      @include respond-to(small-desctop)
+        margin: 10px 0
+      @include respond-to(mobile)
+        text-align: center
+      .good_news-image
+        height: 64px
+        margin-bottom: 15px
+        position: relative
+        @include respond-to(small-desctop)
+          height: 44px
+        img
+          max-width: 100%
+          max-height: 100%
+          display: block
+          position: absolute
+          left: 0
+          top: 0
+          right: 0
+          bottom: 0
+          margin: auto 0
+          @include respond-to(mobile)
+            margin: auto
+      p
+        line-height: 22px
+        @include respond-to(mobile)
+          line-height: normal
+      .register_button
+        margin-top: 12px
+        display: inline-block
+        color: #2587b6
+        font-family: "AvenirNextW1G-Demi"
+        @extend %transition
+        -webkit-transform: perspective(1px) translateZ(0)
+        transform: perspective(1px) translateZ(0)
+        &:hover
+          span
+            webkit-animation-name: hvr-icon-wobble-horizontal
+            animation-name: hvr-icon-wobble-horizontal
+            -webkit-animation-duration: 1s
+            animation-duration: 1s
+            -webkit-animation-timing-function: ease-in-out
+            animation-timing-function: ease-in-out
+            -webkit-animation-iteration-count: 1
+            animation-iteration-count: 1
+        span
+          display: inline-block
+          background: url("../img/arrow.png") no-repeat
+          -webkit-background-size: cover
+          background-size: cover
+          vertical-align: middle
+          -webkit-transform: translateZ(0)
+          transform: translateZ(0)
+          @extend %transition
+          width: 28px
+          height: 8px
+.footer
+  @extend %all_block
+  background: #eceeee
+  padding: 40px 0 50px 0
+  .footer_logo
+    @include respond-to(mobile)
+      text-align: center
+    a
+      display: inline-block
+      vertical-align: middle
+      max-width: 88px
+      @include respond-to(large-desctop)
+        max-width: 67px
+      img
+        max-width: 100%
+        height: auto
+    span
+      display: inline-block
+      vertical-align: middle
+      padding-left: 9px
+      width: 66%
+      letter-spacing: -.3px
+      line-height: 22px
+      color: #999999
+      @include respond-to(large-desctop)
+        font-size: 12px
+        line-height: normal
+      @include respond-to(mobile)
+        width: 100%
+        display: block
+        text-align: center
+  .phone_and_mail
+    @include respond-to(middle-desctop)
+      text-align: center
+      padding-top: 20px
+    .title
+      color: #999999
+      margin-bottom: 10px
+      @include respond-to(large-desctop)
+        margin-bottom: 5px
+    a
+      font-size: 22px
+      line-height: 22px
+      font-family: "AvenirNextW1G-Demi"
+      color: #000000
+      @include respond-to(large-desctop)
+        font-size: 18px
+      @include respond-to(mobile)
+        font-size: 13px
+    .phone
+      width: 48%
+      float: left
+      padding-right: 5px
+    .mail
+      width: 52%
+      float: left
+  .menu_block
+    text-align: right
+    padding-top: 7px
+    margin-bottom: 0
+    @include respond-to(large-desctop)
+      padding-top: 0
+    a
+      color: #626363
+      border-color: #626363
+      @include respond-to(large-desctop)
+        min-width: 120px
+      @include respond-to(small-desctop)
+        min-width: 100px
+      @include respond-to(small-tablet)
+        min-width: 65px
+      @include respond-to(mobile)
+        width: 100%
+        display: block
+      &:hover
+        background-color: #626363
+        color: #ffffff
+      &.sign-in
+        color: #7dd2e7
+        border-color: #787878
+        @include respond-to(large-desctop)
+          margin-right: 20px
+        @include respond-to(small-tablet)
+          margin-right: 10px
+        @include respond-to(mobile)
+          margin: 0 0 15px 0
+        &:hover
+          color: #626363
+          background-color: transparent
+.pop-up
+  margin: 0 auto
+  position: relative
+  padding: 25px 39px
+  @include respond-to(middle-desctop)
+    padding: 15px 25px
+  @include respond-to(small-desctop)
+    padding: 10px 10px
+  .pop-up_a
+    display: inline-block
+    vertical-align: bottom
+    text-decoration: underline
+    font-family: "AvenirNextW1G-Medium"
+    color: #787878
+    margin: 0 0 15px 35px
+    @include respond-to(small-desctop)
+      margin: 0 0 7px 20px
+    @include respond-to(mobile)
+      margin: 0 0 5px 15px
+  .title
+    display: inline-block
+    vertical-align: middle
+    font-size: 55px
+    font-family: "AvenirNextW1G-Medium"
+    color: #60696b
+    @include respond-to(middle-desctop)
+      font-size: 45px
+    @include respond-to(small-desctop)
+      font-size: 30px
+    @include respond-to(mobile)
+      font-size: 23px
+#register
+  max-width: 918px
+  .text
+    margin-top: 15px
+    line-height: 22px
+    max-width: 570px
+    @include respond-to(small-tablet)
+      line-height: normal
+      margin-top: 5px
+#sign-in,
+#no-password
+  max-width: 913px
+#no-password
+  input[type="submit"]
+    margin: 0
+  .text
+    margin-top: 20px
+    max-width: 645px
+    line-height: 22px
+    @include respond-to(small-tablet)
+      line-height: normal
+      margin-top: 15px
+
+.mfp-bg
+  background-color: #75d9ef!important
+  opacity: 0.9!important
+.mfp-close-btn-in button.mfp-close
+  color: transparent
+  background: url("../img/close.png")
+  -webkit-background-size: cover
+  background-size: cover
+  width: 35px
+  height: 35px
+  top: 30px
+  right: 39px
+  opacity: 1
+  @include respond-to(middle-desctop)
+    right: 25px
+    top: 20px
+    width: 25px
+    height: 25px
+  @include respond-to(small-desctop)
+    right: 10px
+    top: 15px
+    width: 20px
+    height: 20px
+  @include respond-to(small-tablet)
+    width: 15px
+    height: 15px
+    top: 10px
+  @include respond-to(mobile)
+    top: 0
+
+/* Icon Wobble Horizontal */
+@-webkit-keyframes hvr-icon-wobble-horizontal
+  16.65%
+    -webkit-transform: translateX(9px)
+    transform: translateX(9px)
+  33.3%
+    -webkit-transform: translateX(-7px)
+    transform: translateX(-7px)
+  49.95%
+    -webkit-transform: translateX(6px)
+    transform: translateX(6px)
+  66.6%
+    -webkit-transform: translateX(-3px)
+    transform: translateX(-3px)
+  83.25%
+    -webkit-transform: translateX(2px)
+    transform: translateX(2px)
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+@keyframes hvr-icon-wobble-horizontal
+  16.65%
+    -webkit-transform: translateX(9px)
+    transform: translateX(9px)
+  33.3%
+    -webkit-transform: translateX(-7px)
+    transform: translateX(-7px)
+  49.95%
+    -webkit-transform: translateX(6px)
+    transform: translateX(6px)
+  66.6%
+    -webkit-transform: translateX(-3px)
+    transform: translateX(-3px)
+  83.25%
+    -webkit-transform: translateX(2px)
+    transform: translateX(2px)
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)

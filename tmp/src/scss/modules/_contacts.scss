@@ -1,0 +1,45 @@
+// == Contacts
+// -------------------------------
+
+.contacts {
+	@include media('<lg') {
+		padding: 20px;
+	}
+	@include media('>=lg') {
+		padding: 30px;
+	}
+
+	font-weight: 500;
+	line-height: 20px;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	width: 250px;
+
+	color: white;
+	background: $dark-grey;
+}
+
+.contacts__tel {
+	@include media('<lg') {
+		font-size: 16px;
+
+		margin-bottom: 10px;
+	}
+	@include media('>=lg') {
+		font-size: 19px;
+
+		margin-bottom: 20px;
+	}
+}
+
+.contacts__email {
+	@include media('<lg') {
+		font-size: 15px;
+	}
+	@include media('>=lg') {
+		font-size: 17px;
+	}
+}

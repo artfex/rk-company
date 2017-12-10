@@ -1,0 +1,22 @@
+// == Intro
+// -------------------------------
+
+.intro {
+	@include last-margin;
+	@include media('<lg') {
+		margin-bottom: 30px;
+	}
+	@include media('>=lg') {
+		margin-bottom: 50px;
+		padding-top: 30px;
+	}
+
+	max-width: 760px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.intro__title {
+	text-align: center;
+	text-transform: uppercase;
+}

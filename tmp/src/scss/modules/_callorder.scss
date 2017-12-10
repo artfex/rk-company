@@ -1,0 +1,51 @@
+// == Callorder
+// -------------------------------
+
+.callorder {
+	@include media('<sm') {
+		width: 100%;
+		margin-bottom: 14px;
+		order: 0;
+	}
+	@include media('>=sm') {
+		float: left;
+
+		width: 200px;
+	}
+
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 20px;
+
+	display: block;
+
+	padding: 8px 0;
+
+	transition: all $tt;
+	text-align: center;
+
+	color: white;
+	border-radius: 18px;
+	outline: none;
+	background: $azure;
+	&:before {
+		font-family: iconfont;
+		font-weight: normal;
+
+		display: inline-block;
+
+		margin-right: .5em;
+
+		content: '\e902';
+		transition: color $tt;
+
+		color: #99d9e7;
+	}
+	.no-touchevents &:hover {
+		color: white;
+		background: $blue;
+		&:before {
+			color: white;
+		}
+	}
+}

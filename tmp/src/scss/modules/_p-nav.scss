@@ -1,0 +1,31 @@
+// == Profile nav
+// -------------------------------
+
+.p-nav {
+	@include last-margin;
+
+	font-weight: 500;
+
+	min-width: 170px;
+}
+
+.p-nav__item {
+	margin-bottom: .25em;
+	&_type_exit {
+		margin-top: .5em;
+		padding-top: .25em;
+
+		border-top: 1px solid #f7f8fa;
+	}
+}
+
+.p-nav__link {
+	display: block;
+
+	padding: 4px 10px;
+
+	color: $azure;
+	.no-touchevents &:hover {
+		color: $blue;
+	}
+}

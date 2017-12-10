@@ -1,0 +1,89 @@
+// == Sort
+// -------------------------------
+
+.sort {
+	position: relative;
+
+	display: inline-block;
+}
+
+.sort__toggle {
+	font-size: 12px;
+	line-height: 18px;
+
+	position: relative;
+
+	height: 36px;
+	padding: 8px 30px 8px 18px;
+
+	cursor: pointer;
+	white-space: nowrap;
+
+	color: #8492ae;
+	border: 1px solid #d3dae4;
+	border-radius: 18px;
+	&:after {
+		font-family: iconfont;
+
+		position: absolute;
+		top: 9px;
+		right: 15px;
+
+		content: '\e900';
+		transition: transform $tt;
+		.sort_open & {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.sort__value {
+	color: black;
+}
+
+.sort__dd {
+	font-size: 12px;
+	line-height: 18px;
+
+	position: absolute;
+	top: calc(100% + 1px);
+	right: 0;
+
+	visibility: hidden;
+
+	min-width: 100%;
+	padding: 8px 0;
+
+	transition: all $tt;
+	transform: translateY(50px);
+	text-align: right;
+
+	opacity: 0;
+	border: 1px solid #d3dae4;
+	border-radius: 18px;
+	background: #f6f7fa;
+	.sort_open & {
+		z-index: 10;
+
+		visibility: visible;
+
+		transform: translateY(0);
+
+		opacity: 1;
+	}
+}
+
+.sort__item {
+	padding: 2px 30px 2px 18px;
+
+	cursor: pointer;
+	transition: color $tt;
+
+	color: #8492ae;
+	.no-touchevents &:hover {
+		color: black;
+	}
+	&_active {
+		color: black;
+	}
+}

@@ -1,0 +1,89 @@
+// == Spinner
+// -------------------------------
+
+.ui-spinner {
+	position: relative;
+
+	display: block;
+
+	width: 100px;
+	height: 50px;
+	padding: 0 24px;
+
+	border: 1px solid #e4e7ed;
+	border-radius: 6px;
+	background: white;
+	.card__count & {
+		@include media('>=xl') {
+			width: 122px;
+			height: 62px;
+			padding: 0 30px;
+		}
+	}
+}
+
+.ui-spinner-input {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+
+	display: block;
+
+	width: 100%;
+	height: 48px;
+	padding: 12px 0;
+
+	text-align: center;
+
+	border: none;
+	outline: none;
+	.card__count & {
+		@include media('>=xl') {
+			font-size: 22px;
+
+			height: 60px;
+			padding: 18px 0;
+		}
+	}
+}
+
+.ui-spinner-button {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 48px;
+
+	position: absolute;
+	top: 0;
+
+	display: block;
+
+	width: 24px;
+
+	cursor: pointer;
+	text-align: center;
+
+	color: #e4e7ed;
+	.card__count & {
+		@include media('>=xl') {
+			font-size: 22px;
+			line-height: 60px;
+
+			width: 30px;
+		}
+	}
+	.no-touchevents &:hover {
+		color: $azure;
+	}
+}
+
+.ui-spinner-up {
+	right: 0;
+
+	padding-right: 4px;
+}
+
+.ui-spinner-down {
+	left: 0;
+
+	padding-left: 4px;
+}

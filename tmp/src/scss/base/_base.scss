@@ -1,0 +1,58 @@
+// == Base
+// -------------------------------
+
+*,
+:before,
+:after {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+
+	background: #f6f7fa;
+}
+
+body {
+	font-family: $avenirnext;
+	font-size: 16px;
+	line-height: 1.375;
+
+	position: relative;
+
+	min-height: 100%;
+
+	color: black;
+}
+
+strong {
+	font-weight: 600;
+}
+
+a {
+	transition: color $tt;
+	text-decoration: none;
+
+	color: $blue;
+	.no-touchevents &:hover {
+		color: $azure;
+	}
+}
+
+h1 {
+	@include media('<md') {
+		font-size: 24px;
+	}
+	@include media('>=md','<lg') {
+		font-size: 30px;
+	}
+	@include media('>=lg') {
+		font-size: 36px;
+	}
+
+	line-height: 1.25;
+
+	margin: 0 0 .5em;
+
+	letter-spacing: .02em;
+}

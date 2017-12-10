@@ -1,0 +1,27 @@
+// == Feedback
+// -------------------------------
+
+.feedback {
+	@include media('<sm') {
+		order: 1;
+	}
+	@include media('>=sm') {
+		float: right;
+	}
+
+	font-size: 22px;
+	line-height: 1;
+
+	margin: 7px 0 0;
+
+	color: black;
+	outline: none;
+	&:before {
+		font-family: iconfont;
+
+		content: '\e903';
+	}
+	.no-touchevents &:hover {
+		color: $dark-grey;
+	}
+}

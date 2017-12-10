@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @author Ашурбеков Магомед <director@algoritm.tech>
+ * @description Конфигурационный файл
+ * @version 201610.31
+ */
+// Ошибки выводим на экран
+ini_set('display_errors', 1);
+
+// Отображаем все ошибки
+error_reporting(E_ALL && E_NOTICE);
+
+// Фильтрация переменных
+$get_route = filter_input(INPUT_GET, 'route');
+
+// Подключаем библиотеки
+spl_autoload_register(function($className) {
+    // Все буквы в классе нижнего регистра
+    $classNameLower = mb_strtolower($className, 'UTF-8');
+    // Сканируем папку с библиотеками и подключаем необходимые
+    if (file_exists(LIBS . '/' . $classNameLower . '.lib.php')) {
+        require_once LIBS . '/' . $classNameLower . '.lib.php';
+    }
+});
+
+// HTTP путь до корня
+$root_url = explode('/', filter_input(INPUT_SERVER, 'PHP_SELF'));
+
+// Подключаемся к базе данных
+Connect::_self()->setDatabase('root', 'vkoRF269', 'rk-company', 'localhost');
+
+// Текущий каталог или скрипт в каталоге
+if ($root_url[1] != 'index.php') {
+    define('DIR', $root_url[1]);
+}
+define('HTTP_PATH', 'http://' . filter_input(INPUT_SERVER, 'HTTP_HOST') . '/');
+
+// Экземпляр класса шаблонизатора
+$tmp = new Tmp();

@@ -1,0 +1,62 @@
+// == Header
+// -------------------------------
+
+.header {
+	@include media('<sm') {
+		padding-left: 20px;
+	}
+	@include media('>=sm','<lg') {
+		padding-left: 60px;
+	}
+	@include media('<lg') {
+		position: relative;
+
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+
+		transition: transform $tt;
+	}
+	@include media('>=lg') {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 250px;
+
+		padding: 25px 40px 25px 60px;
+
+		transition: left $tt;
+	}
+
+	z-index: 2;
+
+	display: flex;
+
+	border-bottom: 1px solid #dbdfe8;
+	background: #fbfbfc;
+
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.without-sidebar & {
+		@include media('>=lg') {
+			left: 0;
+		}
+	}
+}
+
+.header__nav {
+	@include clearfix;
+	@include media('<sm') {
+		display: flex;
+
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	@include media('<md') {
+		width: 100%;
+	}
+	@include media('>=md') {
+		width: 390px;
+	}
+}

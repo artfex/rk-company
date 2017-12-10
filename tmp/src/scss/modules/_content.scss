@@ -1,0 +1,24 @@
+// == Content
+// -------------------------------
+
+.content {
+	@include last-margin;
+	@include media('<lg') {
+		padding: 40px 20px;
+
+		transition: transform $tt;
+	}
+	@include media('>=lg') {
+		margin-left: 250px;
+		padding: 127px 40px 40px;
+
+		transition: margin $tt;
+	}
+
+	position: relative;
+	.without-sidebar & {
+		@include media('>=lg') {
+			margin-left: 0;
+		}
+	}
+}

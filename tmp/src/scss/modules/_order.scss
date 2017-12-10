@@ -1,0 +1,163 @@
+// == Order
+// -------------------------------
+
+.order {
+	@include media('<lg') {
+		margin-bottom: 20px;
+	}
+	@include media('>=lg') {
+		margin-bottom: 40px;
+	}
+
+	max-width: 916px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.order__item {
+	@include media('<md') {
+		@include clearfix;
+
+		padding: 15px 20px 15px 92px;
+	}
+	@include media('>=md') {
+		display: flex;
+
+		padding: 15px 20px;
+
+		align-items: center;
+	}
+
+	font-size: 14px;
+
+	padding: 15px 20px;
+
+	border: 1px solid #e4e7ed;
+	background: white;
+	&:nth-child(n+2) {
+		margin-top: -1px;
+	}
+}
+
+.order__hero {
+	@include media('<md') {
+		float: left;
+
+		width: 52px;
+		margin-left: -72px;
+	}
+	@include media('>=md') {
+		width: 82px;
+	}
+}
+
+.order__image {
+	display: block;
+
+	max-width: 100%;
+	height: auto;
+
+	border: 1px solid #e4e7ed;
+	border-radius: 6px;
+}
+
+.order__description {
+	@include media('<md') {
+		margin-bottom: 10px;
+	}
+	@include media('>=md') {
+		padding-left: 20px;
+	}
+	@include media('>=md','<xl') {
+		width: 122px;
+	}
+	@include media('>=xl') {
+		width: 165px;
+	}
+}
+
+.order__caption {
+	font-weight: 500;
+}
+
+.order__info {
+	font-weight: 500;
+
+	color: $light-grey;
+}
+
+.order__price {
+	@include media('<sm') {
+		@include last-margin;
+
+		margin-bottom: 10px;
+	}
+	@include media('>=sm') {
+		display: flex;
+
+		flex-wrap: wrap;
+	}
+	@include media('>=sm','<md') {
+		margin: 0 -5px 10px;
+	}
+	@include media('>=md','<xl') {
+		width: calc(100% - 380px);
+	}
+	@include media('>=xl') {
+		width: calc(100% - 450px);
+	}
+}
+
+.order__price-item {
+	@include media('<sm') {
+		margin-bottom: 5px;
+	}
+	@include media('>=sm') {
+		width: 50%;
+	}
+	@include media('>=sm','<md') {
+		padding: 0 5px;
+	}
+	@include media('>=md') {
+		padding-left: 20px;
+	}
+}
+
+.order__price-value {
+	font-weight: bold;
+}
+
+.order__price-note {
+	font-weight: 500;
+
+	color: $light-grey;
+}
+
+.order__count {
+	@include media('<md') {
+		float: left;
+
+		width: 100px;
+		margin-right: 20px;
+	}
+	@include media('>=md') {
+		width: 120px;
+		padding-left: 20px;
+	}
+}
+
+.order__remove {
+	@include media('<md') {
+		float: left;
+
+		margin-top: 7px;
+	}
+	@include media('>=md','<xl') {
+		width: 56px;
+		padding-left: 20px;
+	}
+	@include media('>=xl') {
+		width: 83px;
+		padding-left: 47px;
+	}
+}

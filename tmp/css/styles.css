@@ -1,0 +1,33 @@
+.pointer {
+    cursor: pointer;
+}
+
+div#baskets_of_buyers table {
+    width: 100%;
+}
+
+div#baskets_of_buyers table tr th, div#baskets_of_buyers table tr td, div#purchase_history table tr th, div#purchase_history table tr td  {
+    padding: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+div#baskets_of_buyers table tr, div#purchase_history table tr {
+    border-bottom: 1px solid #000;
+}
+
+div#baskets_of_buyers table tr.pointer td {
+    font-weight: bold;
+}
+
+div#baskets_of_buyers table tr td.points, div#baskets_of_buyers table tr td.maxsum, div#purchase_history table tr td.price. div#purchase_history table tr td.quantity {
+    text-align: right;
+}
+
+div#baskets_of_buyers table tr td.name {
+    text-align: left;
+}
+
+div#baskets_of_buyers table tr td.date {
+    text-align: center;
+}

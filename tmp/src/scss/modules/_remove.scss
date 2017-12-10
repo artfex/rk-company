@@ -1,0 +1,68 @@
+// == Remove
+// -------------------------------
+
+.remove {
+	position: relative;
+
+	display: block;
+
+	margin: 0 auto;
+
+	transition: all $tt;
+
+	border-radius: 50%;
+	&:before,
+	&:after {
+		position: absolute;
+		top: calc(50% - 1px);
+
+		display: block;
+
+		height: 2px;
+
+		content: '';
+
+		border-top: 2px solid;
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
+	&_size_sm {
+		width: 20px;
+		height: 20px;
+
+		color: #e4e7ed;
+		border: 1px solid;
+		&:before,
+		&:after {
+			left: calc(50% - 5px);
+
+			width: 10px;
+		}
+		.no-touchevents &:hover {
+			color: $azure;
+		}
+	}
+	&_size_lg {
+		width: 36px;
+		height: 36px;
+
+		color: white;
+		background: $azure;
+		box-shadow: 0 0 10px rgba(51,178,207,.35);
+		&:before,
+		&:after {
+			left: calc(50% - 7px);
+
+			width: 14px;
+		}
+		&:hover {
+			color: white;
+			background: $blue;
+			box-shadow: 0 0 10px rgba(37,135,182,.35);
+		}
+	}
+}

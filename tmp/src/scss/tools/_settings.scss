@@ -1,0 +1,24 @@
+@charset 'UTF-8';
+
+// Fonts
+$avenirnext: avenirnextw1g, sans-serif;
+
+// Colors
+$blue: #2587b6;
+$azure: #33b2cf;
+$grey: #787878;
+$dark-grey: #4b4b4b;
+$light-grey: #929292;
+
+// Transition
+$transition-duration: .2s;
+$transition-timing-function: ease-in-out;
+$tt: $transition-duration $transition-timing-function;
+
+// Breakpoints
+$breakpoints: (
+	'sm': 480px,
+	'md': 768px,
+	'lg': 1025px,
+	'xl': 1400px
+);

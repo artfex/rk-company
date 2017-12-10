@@ -1,0 +1,20 @@
+// Back link
+
+.back-link {
+	font-size: 14px;
+	font-weight: 600;
+
+	color: $blue;
+	&:before {
+		font-weight: normal;
+
+		display: inline-block;
+
+		margin-right: .5em;
+
+		content: '\2190';
+	}
+	.no-touchevents &:hover {
+		color: $azure;
+	}
+}

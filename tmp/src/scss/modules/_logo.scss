@@ -1,0 +1,26 @@
+// == Logo
+// -------------------------------
+
+.logo {
+	@include hide-text;
+	@include media('<md') {
+		width: 90px;
+		height: 54px;
+		margin-right: 20px;
+	}
+	@include media('>=md','<lg') {
+		width: 130px;
+		height: 78px;
+		margin-right: 20px;
+	}
+	@include media('>=lg') {
+		width: 175px;
+		height: 105px;
+		margin-bottom: 20px;
+	}
+
+	display: block;
+
+	background: url(../i/logo.png) no-repeat 0 50%;
+	background-size: contain;
+}

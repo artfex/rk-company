@@ -1,0 +1,7 @@
+// == Reset last element's bottom margin
+// ----------------------
+@mixin last-margin {
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}

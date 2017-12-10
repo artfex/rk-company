@@ -1,0 +1,96 @@
+// == Cart
+// -------------------------------
+
+.cart {
+	max-width: 916px;
+	margin: 0 auto;
+}
+
+.cart__title {
+	text-align: center;
+}
+
+.cart__info {
+	@include media('<lg') {
+		margin-bottom: 20px;
+	}
+	@include media('>=lg') {
+		margin-bottom: 40px;
+	}
+
+	font-size: 14px;
+
+	text-align: center;
+}
+
+.cart__footer {
+	@include media('>=md') {
+		display: flex;
+
+		justify-content: space-between;
+	}
+}
+
+.cart__footer-leftside {
+	@include media('<md') {
+		margin-bottom: 20px;
+	}
+	@include media('>=md') {
+		width: 474px;
+		max-width: calc(100% - 360px);
+	}
+}
+
+.cart__back {
+	@include media('<md') {
+		margin-bottom: 20px;
+	}
+	@include media('>=md') {
+		margin-bottom: 30px;
+	}
+}
+
+.cart__footer-rightside {
+	@include media('>=md') {
+		width: 320px;
+
+		text-align: right;
+	}
+}
+
+.cart__total {
+	font-size: 14px;
+	font-weight: 500;
+
+	margin-bottom: 20px;
+
+	color: $light-grey;
+}
+
+.cart__total-value {
+	font-size: 18px;
+	font-weight: bold;
+
+	margin-left: 20px;
+
+	color: black;
+}
+
+.cart__bonus {
+	font-size: 14px;
+	font-weight: 500;
+
+	margin-bottom: 20px;
+
+	color: $light-grey;
+}
+
+.cart__bonus-value {
+	font-weight: bold;
+}
+
+.cart__btn-holder {
+	@include media('>=md') {
+		margin-top: 70px;
+	}
+}

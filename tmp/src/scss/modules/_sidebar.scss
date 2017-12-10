@@ -1,0 +1,106 @@
+// == Sidebar
+// -------------------------------
+
+.sidebar {
+	@include media('>=lg') {
+		position: fixed;
+		z-index: 2;
+		top: 0;
+		left: 0;
+
+		overflow: hidden;
+
+		width: 250px;
+		height: 100%;
+
+		transition: transform $tt;
+
+		background: $grey;
+	}
+	.without-sidebar & {
+		@include media('>=lg') {
+			transform: translateX(-250px);
+		}
+	}
+}
+
+.sidebar__outer {
+	@include media('>=lg') {
+		overflow-y: auto;
+
+		width: 270px;
+		height: 100%;
+	}
+}
+
+.sidebar__inner {
+	@include media('>=lg') {
+		position: relative;
+
+		width: 250px;
+		min-height: 100%;
+		padding-bottom: 120px;
+	}
+}
+
+.sidebar__header {
+	@include media('<lg') {
+		display: flex;
+
+		padding: 10px 20px;
+
+		transition: transform $tt;
+
+		align-items: center;
+	}
+	@include media('>=lg') {
+		padding: 20px 30px 50px;
+	}
+
+	color: white;
+	background: $azure;
+}
+
+.sidebar__content {
+	@include media('<lg') {
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		overflow: hidden;
+
+		width: 250px;
+		height: 100%;
+
+		transition: transform $tt;
+		transform: translateX(-250px);
+
+		background: $grey;
+	}
+
+	z-index: 100;
+	.with-sidebar & {
+		@include media('<lg') {
+			transform: translateX(0);
+		}
+	}
+}
+
+.sidebar__content-outer {
+	@include media('<lg') {
+		overflow-y: auto;
+
+		width: 270px;
+		height: 100%;
+	}
+}
+
+.sidebar__content-inner {
+	@include media('<lg') {
+		position: relative;
+
+		width: 250px;
+		min-height: 100%;
+		padding-bottom: 90px;
+	}
+}

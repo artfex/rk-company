@@ -1,0 +1,268 @@
+// == Card
+// -------------------------------
+
+.card {
+	@include media('<md') {
+		margin-bottom: 20px;
+		padding: 20px;
+	}
+	@include media('>=md') {
+		margin-bottom: 40px;
+		padding: 40px;
+	}
+
+	background: white;
+	box-shadow: 0 0 25px rgba(0,0,0,.05);
+}
+
+.card__back {
+	@include media('<md') {
+		margin-bottom: 20px;
+	}
+	@include media('>=md') {
+		margin-bottom: 30px;
+	}
+}
+
+.card__title {
+	@include media('<md') {
+		margin-bottom: 20px;
+	}
+	@include media('>=md') {
+		margin-bottom: 60px;
+	}
+}
+
+.card__container {
+	@include media('>=sm') {
+		display: flex;
+
+		justify-content: space-between;
+	}
+}
+
+.card__hero {
+	@include media('<sm') {
+		margin-bottom: 20px;
+	}
+	@include media('>=sm','<xl') {
+		width: 30%;
+	}
+	@include media('>=xl') {
+		width: 400px;
+	}
+}
+
+.card__image {
+	display: block;
+
+	max-width: 100%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.card__info {
+	@include last-margin;
+	@include media('>=sm','<xl') {
+		width: 70%;
+	}
+	@include media('<md') {
+		padding-left: 20px;
+	}
+	@include media('>=md') {
+		font-size: 18px;
+
+		padding-left: 40px;
+	}
+	@include media('>=xl') {
+		width: calc(100% - 400px);
+	}
+}
+
+.card__row {
+	@include media('<md') {
+		@include last-margin;
+
+		margin-bottom: 20px;
+	}
+	@include media('>=md') {
+		display: flex;
+
+		margin-right: -20px;
+		margin-left: -20px;
+
+		justify-content: space-between;
+	}
+	@include media('>=md','<xl') {
+		margin-bottom: 40px;
+	}
+	@include media('>=xl') {
+		margin-bottom: 60px;
+	}
+}
+
+.card__column {
+	@include media('<md') {
+		margin-bottom: 20px;
+	}
+	@include media('>=md') {
+		width: 50%;
+		padding: 0 20px;
+	}
+}
+
+.card__label {
+	@include media('<md') {
+		margin-bottom: 5px;
+	}
+	@include media('>=md') {
+		margin-bottom: 20px;
+	}
+
+	color: $light-grey;
+	&_inline {
+		display: inline;
+
+		margin: 0 .5em 0 0;
+	}
+}
+
+.card__article {
+	font-weight: 500;
+
+	color: $light-grey;
+}
+
+.card__article-name {
+	color: black;
+}
+
+.card__price {
+	@include media('<lg') {
+		font-size: 18px;
+	}
+	@include media('>=lg') {
+		font-size: 24px;
+	}
+
+	font-weight: bold;
+
+	color: #f36a44;
+}
+
+.card__count {
+	@include media('<md') {
+		margin-bottom: 20px;
+	}
+	@include media('>=md','<xl') {
+		margin-bottom: 40px;
+	}
+	@include media('>=xl') {
+		margin-bottom: 60px;
+	}
+
+	display: flex;
+
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.card__count-label {
+	@include media('<md') {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	@include media('>=md') {
+		max-width: 260px;
+		padding-right: 20px;
+	}
+
+	color: $light-grey;
+}
+
+.card__count-unit {
+	@include media('<xl') {
+		font-size: 18px;
+	}
+	@include media('>=xl') {
+		font-size: 22px;
+	}
+
+	font-weight: 600;
+
+	padding-left: 20px;
+}
+
+.card__reg {
+	@include media('>=1170px') {
+		display: flex;
+
+		margin: 0 -20px;
+
+		justify-content: space-between;
+	}
+}
+
+.card__reg-note {
+	@include media('<1170px') {
+		margin-bottom: 10px;
+	}
+	@include media('>=1170px') {
+		width: 50%;
+		padding: 0 20px;
+	}
+
+	font-size: 14px;
+
+	color: $light-grey;
+}
+
+.card__reg-btn {
+	@include media('>=1170px') {
+		width: 50%;
+		padding: 0 20px;
+	}
+}
+
+.card__footer {
+	@include media('>=lg') {
+		display: flex;
+
+		margin-right: -20px;
+		margin-left: -20px;
+
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}
+
+.card__total {
+	@include media('<lg') {
+		margin-bottom: 10px;
+	}
+	@include media('>=lg') {
+		width: 50%;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+.card__total-value {
+	@include media('<md') {
+		font-size: 18px;
+	}
+	@include media('>=md') {
+		font-size: 24px;
+	}
+
+	font-weight: bold;
+}
+
+.card__btn {
+	@include media('>=lg') {
+		width: 50%;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}

@@ -1,0 +1,59 @@
+// == Header cart
+// -------------------------------
+
+.hcart {
+	@include media('<sm') {
+		order: 2;
+	}
+	@include media('>=sm') {
+		float: right;
+
+		margin-left: 16px;
+	}
+
+	position: relative;
+
+	margin-top: -2px;
+	margin-bottom: -2px;
+	padding: 6px 0;
+}
+
+.hcart__link {
+	font-size: 26px;
+	line-height: 1;
+
+	position: relative;
+
+	display: block;
+
+	color: black;
+	&:before {
+		font-family: iconfont;
+
+		content: '\e904';
+	}
+	.no-touchevents &:hover {
+		color: $dark-grey;
+	}
+}
+
+.hcart__num {
+	font-size: 9px;
+	line-height: 12px;
+
+	position: absolute;
+	top: -5px;
+	right: -5px;
+
+	display: block;
+
+	min-width: 14px;
+	padding: 0 2px;
+
+	text-align: center;
+
+	color: white;
+	border: 1px solid white;
+	border-radius: 7px;
+	background: $azure;
+}

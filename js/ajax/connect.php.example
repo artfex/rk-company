@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @author Ашурбеков Магомед <director@algoritm.tech>
+ * @description Подключение к базе данных
+ * @version 201701.25
+ */
+// Задаём переменные
+$host = 'localhost';
+$user = 'root';
+$password = 'vkoRF269';
+$database = 'rk-company';
+
+$mysqli = new mysqli($host, $user, $password, $database);
+if ($mysqli->connect_error) {
+    exit('(' . $mysqli->connect_errno . ') Ошибка подключения к базе данных!');
+} else {
+    $mysqli->set_charset('UTF8');
+    return $mysqli;
+}

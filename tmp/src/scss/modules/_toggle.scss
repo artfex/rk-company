@@ -1,0 +1,66 @@
+// == Toggle
+// -------------------------------
+
+.toggle {
+	@include media('<lg') {
+		top: 29px;
+	}
+	@include media('>=lg') {
+		top: 34px;
+	}
+
+	position: absolute;
+	left: 10px;
+
+	width: 29px;
+	height: 19px;
+
+	cursor: pointer;
+	&:before,
+	&:after,
+	&__stick {
+		position: absolute;
+		right: 0;
+
+		display: block;
+
+		width: 19px;
+		height: 3px;
+
+		content: '';
+
+		background: black;
+	}
+	&:before {
+		top: 2px;
+	}
+	&:after {
+		top: 14px;
+	}
+	&__stick {
+		top: 8px;
+	}
+}
+
+.toggle__arrow {
+	@include triangle(9px 5px, $azure, left);
+	@include media('<lg') {
+		transform: rotate(180deg);
+	}
+
+	position: absolute;
+	top: 6px;
+	left: 0;
+
+	transition: transform $tt;
+	.without-sidebar & {
+		@include media('>=lg') {
+			transform: rotate(180deg);
+		}
+	}
+	.with-sidebar & {
+		@include media('<lg') {
+			transform: rotate(0);
+		}
+	}
+}

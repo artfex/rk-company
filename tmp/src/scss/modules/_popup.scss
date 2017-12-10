@@ -1,0 +1,149 @@
+// == Popup
+// -------------------------------
+
+.popup {
+	@include last-margin;
+	@include media('<sm') {
+		max-width: 280px;
+	}
+	@include media('>=sm','<md') {
+		max-width: 480px;
+	}
+	@include media('>=md','<lg') {
+		max-width: 640px;
+	}
+	@include media('<lg') {
+		padding: 20px;
+	}
+	@include media('>=lg') {
+		max-width: 920px;
+		padding: 40px;
+	}
+
+	width: 100%;
+	margin: 0 auto;
+
+	transition: all $tt;
+	transform: scale(.5);
+
+	opacity: 0;
+	&_card {
+		max-width: 1150px;
+	}
+	.mfp-ready & {
+		transform: scale(1);
+
+		opacity: 1;
+	}
+	.mfp-removing & {
+		transform: scale(.5);
+
+		opacity: 0;
+	}
+}
+
+.popup__header {
+	@include clearfix;
+	@include media('<lg') {
+		margin-bottom: 10px;
+	}
+	@include media('>=lg') {
+		margin-bottom: 30px;
+	}
+}
+
+.popup__close {
+	@include media('<sm') {
+		width: 24px;
+		height: 24px;
+		margin: 2px 0 0 20px;
+	}
+	@include media('>=sm','<lg') {
+		width: 32px;
+		height: 32px;
+		margin: 4px 0 0 20px;
+	}
+	@include media('>=lg') {
+		width: 48px;
+		height: 48px;
+		margin: 6px 0 0 40px;
+	}
+
+	position: relative;
+
+	display: block;
+	float: right;
+
+	padding: 0;
+
+	border: none;
+	outline: none;
+	background: none;
+	&:before,
+	&:after {
+		@include media('<sm') {
+			top: 10px;
+
+			width: 24px;
+			height: 4px;
+		}
+		@include media('>=sm','<lg') {
+			top: 13px;
+
+			width: 32px;
+			height: 6px;
+		}
+		@include media('>=lg') {
+			top: 20px;
+
+			width: 48px;
+			height: 8px;
+		}
+
+		position: absolute;
+		left: 0;
+
+		display: block;
+
+		content: '';
+
+		background: white;
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
+	.popup__header & {
+		margin: 0;
+	}
+}
+
+.popup__title {
+	@include media('<sm') {
+		font-size: 24px;
+		line-height: 28px;
+	}
+	@include media('>=sm','<lg') {
+		font-size: 36px;
+		line-height: 42px;
+	}
+	@include media('>=lg') {
+		font-size: 55px;
+		line-height: 60px;
+	}
+
+	font-weight: 500;
+
+	color: #60696b;
+}
+
+.popup__footer {
+	@include media('<lg') {
+		margin-top: 30px;
+	}
+	@include media('>=lg') {
+		margin-top: 45px;
+	}
+}

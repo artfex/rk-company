@@ -1,0 +1,46 @@
+// == Profile
+// -------------------------------
+
+.profile {
+	@include media('<sm') {
+		order: 3;
+	}
+	@include media('>=sm') {
+		float: right;
+
+		margin-left: 30px;
+	}
+
+	position: relative;
+
+	margin-top: -2px;
+	margin-bottom: -2px;
+}
+
+.profile__link {
+	display: block;
+
+	height: 40px;
+	padding-right: 16px;
+
+	color: black;
+	&:after {
+		@include triangle(8px 4px, black, down);
+
+		position: absolute;
+		top: 18px;
+		right: 0;
+
+		content: '';
+		transition: transform $tt;
+	}
+	.dropdown_active &:after {
+		transform: rotate(180deg);
+	}
+}
+
+.profile__hero {
+	display: block;
+
+	border-radius: 50%;
+}
