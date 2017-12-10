@@ -17,16 +17,16 @@ class Mail {
         $headers = 'From: avtodok@avtodok.com' . "\r\n";
         $headers .= 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-        if ($to === 'administrator') {
+        if ($to == 'administrator') {
             $to = 'avtodok@avtodok.com';
         }
-        if ($to === 'manager') {
+        if ($to == 'manager') {
             $to = 'order@avtodok.com';
         }
-        if ($to === 'develop') {
+        if ($to == 'develop') {
             $to = 'director@algoritm.tech';
         }
-        if ($to === 'doubleDevelop') {
+        if ($to == 'doubleDevelop') {
             $to = 'ashurbekovmagomed@yandex.ru';
         }
         if (mail($to, $subject, $message, $headers)) {
