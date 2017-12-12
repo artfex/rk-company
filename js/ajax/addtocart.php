@@ -12,7 +12,7 @@ $user_id = (int) filter_input(INPUT_POST, 'user_id');
 $quantity = (int) filter_input(INPUT_POST, 'quantity');
 
 
-if ($quantity === 0) {
+if ($quantity == 0) {
     echo 'Нельзя добавить 0 шт!';
 } else {
     $query = $mysqli->query("SELECT `quantity` FROM `cart` WHERE `user_id` = '$user_id' AND `vandor` = '$vandor'");

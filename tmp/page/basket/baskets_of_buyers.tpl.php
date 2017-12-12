@@ -8,7 +8,7 @@ $cart = new Cart();
 $baskets_id = (int) filter_input(INPUT_GET, 'baskets_id');
 ?>
 <div class="content">
-    <?php if ($baskets_id === 0 || $baskets_id === NULL || $baskets_id === '') { ?>
+    <?php if ($baskets_id == 0 || $baskets_id == NULL || $baskets_id == '') { ?>
         <div id="baskets_of_buyers">
             <h1>Список покупок клиентов</h1>
             <table>
@@ -28,7 +28,7 @@ $baskets_id = (int) filter_input(INPUT_GET, 'baskets_id');
                     $verification = (int) $value['verification'];
                     ?>
                     <tr class="string <?php
-                    if ($verification === 0) {
+                    if ($verification == 0) {
                         echo 'pointer';
                     }
                     ?>" onclick="location.href = '/?route=baskets_of_buyers&baskets_id=<?php echo $id; ?>'">
@@ -57,7 +57,7 @@ $baskets_id = (int) filter_input(INPUT_GET, 'baskets_id');
             </ul>
             <?php
             $points = (int) $cart->BasketOfBuyer($baskets_id, 'points');
-            if (+ $cart->BasketOfBuyer($baskets_id, 'verification') === 1) {
+            if (+ $cart->BasketOfBuyer($baskets_id, 'verification') == 1) {
                 echo "<label>Начислено $points баллов</label>";
             } else {
             ?>

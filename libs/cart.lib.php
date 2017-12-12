@@ -21,7 +21,7 @@ class Cart {
         $meta = new Meta();
         $user_id = $meta->user('id'); // ID настоящего пользователя
         $query = $this->db->query("SELECT * FROM `cart` WHERE `user_id` = $user_id ORDER BY `vandor` ASC");
-        if ($query->num_rows === 0) {
+        if ($query->num_rows == 0) {
             return 0;
         } else {
             $array = array();
@@ -70,7 +70,7 @@ class Cart {
                 . "<th style='padding: 3px; border: 1px solid black'>Сумма</th>"
                 . "</tr>";
         // Если в корзине есть товар
-        if ($this->thisCart() !== 0) {
+        if ($this->thisCart() != 0) {
             $this->db->query("INSERT INTO `list_baskets` (`user_id`, `date`, `verification`) VALUES ('$user_id', '$time', 0)");
             foreach ($this->thisCart() as $product) {
                 // Задаём переменные
@@ -84,7 +84,7 @@ class Cart {
                     // Если это клипса или металл, и их количество меньше 100
                     if ($section <= 2 && $quantity < 100) {
                         $sum = $price25 * $quantity; // Стоимость при покупке клипс и металла до 100 шт
-                    } elseif ($section === 5 && $quantity === 2) {
+                    } elseif ($section == 5 && $quantity == 2) {
                         $sum = $price25 * $quantity; // Стоимость при покупке очистителей 1 шт
                     } else {
                         $sum = $price100 * $quantity; // Стоимость при покупке от 100 шт клипс от 2 шт очистителей и всех остальных
@@ -130,7 +130,7 @@ class Cart {
                     . "E-mail: $email<br>"
                     . "Телефон: $tel<br>"
                     . "Город: $country";
-            if ($comment !== '') {
+            if ($comment != '') {
                 $msgAdmin = "$msgAdmin<br>Комментарий: $comment";
             }
             $msgAdmin = "$msgAdmin<br>$msg";
@@ -138,9 +138,9 @@ class Cart {
             // Сообщение для пользователя
             $msgUser = "Ваш заказ принят: $msg";
 
-            /*if ($payment === 'robokassa') {
+            /*if ($payment == 'robokassa') {
                 
-            } elseif ($payment === 'norobokassa') {*/
+            } elseif ($payment == 'norobokassa') {*/
                 Mail::new_mail("manager", "Заказ от пользователя: $name", $msgAdmin);
                 Mail::new_mail("doubleDevelop", "Заказ RK-company от пользователя: $name", $msgAdmin);
                 Mail::new_mail($email, "Ваш заказ принят", $msgUser . $baskets_id);

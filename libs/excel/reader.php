@@ -404,7 +404,7 @@ class Spreadsheet_Excel_Reader {
           }
           }
 
-          if ($this->_index === null) {
+          if ($this->_index == null) {
           return $this->raiseError("$file doesn't seem to be an Excel file");
           }
 

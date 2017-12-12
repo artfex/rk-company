@@ -30,18 +30,18 @@ class Registration {
         $time = time();
 
         // Проверяем данные на соответствия
-        if (Validate::EmailValidate($email) === FALSE) {
+        if (Validate::EmailValidate($email) == FALSE) {
             throw new Exception('Введите корректный E-mail');
         }
         if (!$this->UniqEmail($email)) {
             throw new Exception('Такой E-mail уже зарегистрирован');
         }
 
-        if ($password !== $repeat_password) {
+        if ($password != $repeat_password) {
             throw new Exception('Пароль не совпадает');
         }
 
-        if (strlen($phone) !== 10 || $phone === '' || $phone === 0) {
+        if (strlen($phone) != 10 || $phone == '' || $phone == 0) {
             throw new Exception("Введите корректный номер телефона");
         }
         if (!$this->UniqTel($phone)) {
@@ -81,7 +81,7 @@ class Registration {
         $country = $result['country'];
         $key_hash = Validate::hashInit("$password::$email");
         $link_role = HTTP_PATH . "?route=role/$id/$key_hash";
-        if ($activate_key === Validate::hashInit("$email::$password")) {
+        if ($activate_key == Validate::hashInit("$email::$password")) {
             if ($this->db->query("UPDATE `users` SET `activate` = 1 WHERE `email` = '$email'")) {
                 Mail::new_mail("manager", "Активация аккаунта $name!", "E-mail: $email<br />Имя: $name<br />Телефон: $phone<br />Город: $country<br />Только что зарегистрировался. Для подтверждения аккаунта, перейдите в административную панель сайта или по ссылке: $link_role");
                 Mail::new_mail($email, "Активация аккаунта!", "Здравствуйте, $name! Вы подтвердили свою почту, и теперь осталось дождаться проверки Вашей анкеты администратором сайта. После успешной проверки Вы получите уведомление на E-mail!");
@@ -105,7 +105,7 @@ class Registration {
         $email = $result['email'];
         $password = $result['password'];
         $name = $result['name'];
-        if ($activate_key === Validate::hashInit("$password::$email")) {
+        if ($activate_key == Validate::hashInit("$password::$email")) {
             if ($this->db->query("UPDATE `users` SET `role` = 3 WHERE `email` = '$email'")) {
                 Mail::new_mail($email, "Активация аккаунта!", "Здравствуйте, $name! Ваша анкета проверена и успешно активирована администратором сайта. Теперь Вы можете заходить на сайт <a href='https://rk-company.com'>rk-company.com</a> используя свой логин и пароль!");
                 return TRUE;
@@ -127,7 +127,7 @@ class Registration {
         $password = Validate::hashInit($data['password']);
         $query = $this->db->query("SELECT `id`, `email`, `password`, `activate`, `role` FROM `users` WHERE `email` = '$email'");
         $result = $query->fetch_array(MYSQLI_ASSOC);
-        if ($result['email'] === $email && $password === $result['password']) {
+        if ($result['email'] == $email && $password == $result['password']) {
             if ($result['activate'] == 0) {
                 throw new Exception('Ваша почта не подтверждена');
             } elseif ($result['role'] == 0) {

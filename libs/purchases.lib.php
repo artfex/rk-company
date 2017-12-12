@@ -19,7 +19,7 @@ class Purchases {
      */
     public function listBaskets() {
         $list = $this->db->query("SELECT * FROM `list_baskets`");
-        if ($list->num_rows === 0) {
+        if ($list->num_rows == 0) {
             return 0;
         } else {
             $array = array();
@@ -50,7 +50,7 @@ class Purchases {
      */
     public function purchaseHistory($baskets_id) {
         $query = $this->db->query("SELECT * FROM `purchase_history`");
-        if ($list->num_rows === 0) {
+        if ($list->num_rows == 0) {
             return 0;
         } else {
             return $query;

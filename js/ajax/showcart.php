@@ -11,9 +11,9 @@ $show = filter_input(INPUT_POST, 'show');
 
 $query = $mysqli->query("SELECT * FROM `cart` WHERE `user_id` = '$user_id' ORDER BY `vandor` ASC");
 $rows = $query->num_rows;
-if ($show === 'rows') {
+if ($show == 'rows') {
     echo $rows;
-} elseif ($show === 'data') {
+} elseif ($show == 'data') {
     $cart = '';
     $maxsum = 0;
     $i = 0;
@@ -32,7 +32,7 @@ if ($show === 'rows') {
             $section = $product['section'];
             if ($section <= 2 && $quantity < 100) {
                 $sum = $price25 * $quantity; // Стоимость при покупке клипс и металла до 100 шт
-            } elseif ($section === 5 && $quantity === 2) {
+            } elseif ($section == 5 && $quantity == 2) {
                 $sum = $price25 * $quantity; // Стоимость при покупке очистителей 1 шт
             } else {
                 $sum = $price100 * $quantity; // Стоимость при покупке от 100 шт клипс от 2 шт очистителей и всех остальных

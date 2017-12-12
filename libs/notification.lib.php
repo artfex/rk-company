@@ -85,7 +85,7 @@ class Notification {
         $message_id = $message_array['id'];
         // Кому отправляем
         $to = $data['to'];
-        if ($to === '') {
+        if ($to == '') {
             for ($i = 1; $i < 10; $i ++) {
                 $query = $this->db->query("SELECT `id` FROM `users` WHERE `role` = '$i'");
                 foreach ($query as $users) {

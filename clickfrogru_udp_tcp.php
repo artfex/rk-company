@@ -70,7 +70,7 @@ class ClickfrogUDPSender
 			}			
 		}		
 		@fclose($s_udp);
-		if($err_id!== false && $err_id === 1)			
+		if($err_id != false && $err_id == 1)			
 			self::sendto_tcp($msg);
 		}
 		catch(Exception $e) { } 

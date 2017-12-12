@@ -27,7 +27,7 @@ switch ($section) {
 <div class="content">
     <div class="cart">
         <h1 class="cart__title">Корзина</h1>
-        <?php if ($cart->thisCart() === 0) { ?>
+        <?php if ($cart->thisCart() == 0) { ?>
         <div class="cart__info">Ваша корзина пустая!</div>
         <?php } else { ?>
         <div class="cart__info points"></div>

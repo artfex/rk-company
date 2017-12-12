@@ -19,19 +19,19 @@ $notification = new Notification();
                 <div class="product__cell-group">
                     <div class="product__cell product__cell_type_info">
                         <div class="product__label">Дата отправления</div>
-                        <div class="product__caption" <?php if ($status === 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo date('d M Y', $notification->readMessage($message_id, 'date')); ?> года</div>
+                        <div class="product__caption" <?php if ($status == 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo date('d M Y', $notification->readMessage($message_id, 'date')); ?> года</div>
                     </div>
                     <div class="product__cell product__cell_type_info">
                         <div class="product__label">Автор</div>
-                        <div class="product__caption" <?php if ($status === 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo $meta->users($from, 'name'); ?></div>
+                        <div class="product__caption" <?php if ($status == 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo $meta->users($from, 'name'); ?></div>
                     </div>
                     <div class="product__cell product__cell_type_info">
                         <div class="product__label">Заголовок</div>
-                        <div class="product__caption" <?php if ($status === 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo $notification->readMessage($message_id, 'title'); ?></div>
+                        <div class="product__caption" <?php if ($status == 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo $notification->readMessage($message_id, 'title'); ?></div>
                     </div>
                     <div class="product__cell product__cell_type_description">
                         <div class="product__label">Содержимое</div>
-                        <div class="product__caption" <?php if ($status === 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo $notification->readMessage($message_id, 'description'); ?></div>
+                        <div class="product__caption" <?php if ($status == 1) { ?> style="font-weight: normal;" <?php } ?>><?php echo $notification->readMessage($message_id, 'description'); ?></div>
                     </div>
                 </div>
             </div>

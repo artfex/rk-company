@@ -28,7 +28,7 @@ class Route {
         $get_route = filter_input(INPUT_GET, 'route');
         if (isset($get_route) && !empty($get_route)) {
             $route = explode('/', strip_tags($get_route));
-            if ($route[0] === 'activate') {
+            if ($route[0] == 'activate') {
                 $activate_key = trim($route[2]);
                 $id = intval($route[1]);
 
@@ -38,7 +38,7 @@ class Route {
                 } else {
                     exit('Произошла ошибка подтверждения E-mail! <a href="/">Вернуться на форму входа.</a>');
                 }
-            } elseif ($route[0] === 'role') {
+            } elseif ($route[0] == 'role') {
                 $activate_key = trim($route[2]);
                 $id = intval($route[1]);
 
@@ -48,12 +48,12 @@ class Route {
                 } else {
                     exit('Произошла ошибка активации пользователя! <a href="/">Вернуться на форму входа.</a>');
                 }
-            } elseif ($route[0] === 'logout') {
+            } elseif ($route[0] == 'logout') {
                 setCookie("user_id", '');
                 $_SESSION['user']['id'] = '';
             } else {
                 foreach ($meta->page('') as $value) {
-                    if ($route[0] === $value['guid']) {
+                    if ($route[0] == $value['guid']) {
                         return $value['guid'];
                     }
                 }
@@ -135,7 +135,7 @@ class Route {
      * @param type $time
      */
     public static function location($url, $time = 0) {
-        if ($time === 0) {
+        if ($time == 0) {
             @header('Location:' . $url);
         } else {
             @header('Refresh:' . $time . ';url=' . $url);

@@ -25,37 +25,37 @@ $search = filter_input(INPUT_GET, 'search');
                             <nav class="nav">
                                 <ul class="nav__list">
                                     <li class="nav__item <?php
-                                    if ($section === 1) {
+                                    if ($section == 1) {
                                         echo "nav__item_active";
                                     }
                                     ?>"><a href="/?route=price_list&section=1" class="nav__link">Клипсы</a></li>
                                     <li class="nav__item <?php
-                                    if ($section === 2) {
+                                    if ($section == 2) {
                                         echo "nav__item_active";
                                     }
                                     ?>"><a href="/?route=price_list&section=2" class="nav__link">Металл</a></li>
                                     <li class="nav__item <?php
-                                    if ($section === 3) {
+                                    if ($section == 3) {
                                         echo "nav__item_active";
                                     }
                                     ?>"><a href="/?route=price_list&section=3" class="nav__link">Стяжки</a></li>
                                     <li class="nav__item <?php
-                                    if ($section === 4) {
+                                    if ($section == 4) {
                                         echo "nav__item_active";
                                     }
                                     ?>"><a href="/?route=price_list&section=4" class="nav__link">Разъёмы</a></li>
                                     <li class="nav__item <?php
-                                    if ($section === 5) {
+                                    if ($section == 5) {
                                         echo "nav__item_active";
                                     }
                                     ?>"><a href="/?route=price_list&section=5" class="nav__link">Инструмент</a></li>
                                     <li class="nav__item <?php
-                                    if ($search === 'new') {
+                                    if ($search == 'new') {
                                         echo "nav__item_active";
                                     }
                                     ?>"><a href="/?route=price_list&search=new" class="nav__link">Новинки</a></li>
                                     <li class="nav__item <?php
-                                    if ($search === 'top300') {
+                                    if ($search == 'top300') {
                                         echo "nav__item_active";
                                     }
                                     ?>"><a href="/?route=price_list&search=top300" class="nav__link">ТОП-300</a></li>
@@ -93,9 +93,9 @@ $search = filter_input(INPUT_GET, 'search');
                         foreach ($meta->page() as $value) {
                             $guid = $value['guid'];
                             $title = $value['title'];
-                            if ($meta->user('role') === 10 && $value['role'] === '10') {
+                            if ($meta->user('role') == 10 && $value['role'] == '10') {
                                 echo "<div class='p-nav__item'><a href='/?route=$guid' class='p-nav__link'>$title</a></div>";
-                            } elseif ($value['role'] >= $meta->user('role') && $meta->user('role') !== 10 && $value['role'] !== '10') {
+                            } elseif ($value['role'] >= $meta->user('role') && $meta->user('role') != 10 && $value['role'] != '10') {
                                 echo "<div class='p-nav__item'><a href='/?route=$guid' class='p-nav__link'>$title</a></div>";
                             }
                         }

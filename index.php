@@ -8,7 +8,7 @@
 session_start();
 
 // Проверка версии php
-if (version_compare(phpversion(), '7.0.0', '<') === TRUE) {
+if (version_compare(phpversion(), '7.0.0', '<') == TRUE) {
     exit('Ваша версия PHP ' . phpversion() . '! Для корректной работы требуется php 5.3 и выше!');
 }
 

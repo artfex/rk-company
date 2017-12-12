@@ -5,13 +5,13 @@
  * @version 201703.13
  */
 $pricelist = new PriceList();
-if ($search === 'new') {
+if ($search == 'new') {
     $name = "Новинки";
-} elseif($search === 'top300') {
+} elseif($search == 'top300') {
     $name = 'ТОП-300';
-} elseif ($search !== NULL) {
+} elseif ($search != NULL) {
     $name = "Поиск | $search";
-} elseif ($section !== 0) {
+} elseif ($section != 0) {
     switch ($section) {
         case 1 :
             $name = 'Клипсы';
@@ -30,12 +30,12 @@ if ($search === 'new') {
             break;
     }
 }
-if ($section !== 0) {
+if ($section != 0) {
     $list = $pricelist->product($section, NULL);
-} elseif ($search !== NULL) {
+} elseif ($search != NULL) {
     $list = $pricelist->product(NULL, $search);
 }
-if ($section !== 0 || $search !== NULL) {
+if ($section != 0 || $search != NULL) {
 ?>
 <div class="content">
     <div class="products">
@@ -65,7 +65,7 @@ foreach ($list as $product) {
     $price100 = $product['price100'];
     $sectiondb = (int) $product['section'];
 
-    if ($sectiondb <= 2 || $sectiondb === 5) {
+    if ($sectiondb <= 2 || $sectiondb == 5) {
         $price25 = $product['price25'];
     }
 ?>
@@ -91,7 +91,7 @@ foreach ($list as $product) {
                         <div class="product__label">Цена за 1 шт. (от 25 шт.)</div>
                         <div class="product__price"><span class="product__price-value"><?php echo $price25; ?></span> руб.</div>
                     </div>
-                <?php } elseif ($sectiondb === 5) { ?>
+                <?php } elseif ($sectiondb == 5) { ?>
                     <div class="product__cell product__cell_type_price">
                         <div class="product__label">Цена за 1 шт. для партнёров</div>
                         <div class="product__price"><span class="product__price-value"><?php echo $price100; ?></span> руб.</div>
@@ -118,7 +118,7 @@ foreach ($list as $product) {
         </div>
         <?php } ?>
     </div>
-<?php } elseif ($section === 0 && $search === NULL) { ?>
+<?php } elseif ($section == 0 && $search == NULL) { ?>
     <div class="intro">
         <h1 class="intro__title">Дорогие друзья!</h1>
         <p>Праздники уже закончились, а мы продолжаем дарить подарки! Наши специалисты трудились безустанно все выходные, для того чтобы согреть Вас этой зимой приятным предложением. Теперь Вы можете использовать накопительную систему скидок, совершая покупки через нашу программу. Для этого достаточно просто пользоваться autofasteners.pro и совершать заказы.</p>

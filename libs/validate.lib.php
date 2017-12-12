@@ -33,7 +33,7 @@ class Validate {
      * @param <boolean> $mode - Использовать htmlspecialchars или strip_tags
      */
     public static function clear($field, $mode = FALSE) {
-        if ($mode === TRUE) {
+        if ($mode == TRUE) {
             return htmlspecialchars($field);
         } else {
             return strip_tags($field);

@@ -37,7 +37,7 @@ class Meta {
         $query = $this->db->query("SELECT * FROM `pagemeta`");
         while ($page = $query->fetch_array(MYSQLI_ASSOC)) {
 // Если $_GET не пустое и если страница есть в базе данных и она доступна пользователю
-            if (isset($get_route) && !empty($get_route) && $page['guid'] === $get_route && $page['role'] >= $user_role) {
+            if (isset($get_route) && !empty($get_route) && $page['guid'] == $get_route && $page['role'] >= $user_role) {
                 $result = $page["$content"];
             } elseif ($page['role'] == $user_role && $page['orderliness'] == 0) {
                 $result = $page["$content"];
