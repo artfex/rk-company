@@ -141,6 +141,7 @@ class Cart {
             /*if ($payment == 'robokassa') {
                 
             } elseif ($payment == 'norobokassa') {*/
+                echo ($email);
                 Mail::new_mail("manager", "Заказ от пользователя: $name", $msgAdmin);
                 Mail::new_mail("doubleDevelop", "Заказ RK-company от пользователя: $name", $msgAdmin);
                 Mail::new_mail($email, "Ваш заказ принят", $msgUser . $baskets_id);
